@@ -2,7 +2,8 @@
   <div class="groups-show">
     <div class="container">
       <h2>{{ group.name }}</h2>
-      <p>{{ group.losses }}</p>
+      <!-- Will want to display each user in the group -->
+      <p>{{ group.users }}</p>
       <!-- <img v-bind:src="group.image" alt="group.title" /> -->
       <!-- <li v-if="$parent.getUserID() == group.user_id"> -->
       <router-link v-bind:to="`/groups/${group.id}/edit`"><button>Edit group</button></router-link>

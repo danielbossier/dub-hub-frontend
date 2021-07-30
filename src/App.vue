@@ -7,11 +7,17 @@
       |
       <router-link to="/groups">Groups</router-link>
       |
-      <router-link to="/signup">Signup</router-link>
-      |
-      <router-link to="/login">Login</router-link>
-      |
-      <router-link to="/logout">Logout</router-link>
+      <li v-if="!isLoggedIn()">
+        <router-link to="/signup">Signup</router-link>
+        |
+      </li>
+      <li v-if="!isLoggedIn()">
+        <router-link to="/login">Login</router-link>
+        |
+      </li>
+      <li v-if="isLoggedIn()">
+        <router-link to="/logout">Logout</router-link>
+      </li>
     </div>
     <router-view />
   </div>
@@ -39,3 +45,20 @@
   color: #42b983;
 }
 </style>
+
+<script>
+export default {
+  methods: {
+    isLoggedIn: function () {
+      if (localStorage.getItem("jwt")) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    getUserId: function () {
+      return localStorage.getItem("user_id");
+    },
+  },
+};
+</script>
