@@ -2,9 +2,11 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import TeamsIndex from "../views/TeamsIndex.vue";
+import TeamsShow from "../views/TeamsShow.vue";
 import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
+import GroupsIndex from "../views/GroupsIndex.vue";
 
 Vue.use(VueRouter);
 
@@ -28,6 +30,11 @@ const routes = [
     component: TeamsIndex,
   },
   {
+    path: "/teams/:id",
+    name: "teams-show",
+    component: TeamsShow,
+  },
+  {
     path: "/signup",
     name: "signup",
     component: Signup,
@@ -41,6 +48,11 @@ const routes = [
     path: "/logout",
     name: "logout",
     component: Logout,
+  },
+  {
+    path: "/groups",
+    name: "groups-index",
+    component: GroupsIndex,
   },
 ];
 
