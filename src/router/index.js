@@ -7,6 +7,7 @@ import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
 import GroupsIndex from "../views/GroupsIndex.vue";
+import GroupsShow from "../views/GroupsShow.vue";
 
 Vue.use(VueRouter);
 
@@ -53,6 +54,11 @@ const routes = [
     path: "/groups",
     name: "groups-index",
     component: GroupsIndex,
+  },
+  {
+    path: "/groups/:id",
+    name: "groups-show",
+    component: GroupsShow,
   },
 ];
 
