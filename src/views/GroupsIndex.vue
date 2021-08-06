@@ -2,7 +2,7 @@
   <div class="groups-index">
     <div v-for="group in groups" :key="group.id">
       <router-link v-bind:to="`/groups/${group.id}`">
-        <h2>group: {{ group.name }}</h2>
+        <h2>{{ group.name }}</h2>
       </router-link>
     </div>
   </div>

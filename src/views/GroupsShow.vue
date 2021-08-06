@@ -1,13 +1,17 @@
 <template>
   <div class="groups-show">
     <div class="container">
-      <h2>{{ group.name }}</h2>
+      <h1>{{ group.name }}</h1>
       <!-- Will want to display each user in the group -->
-      <p>{{ group.users }}</p>
-      <!-- <img v-bind:src="group.image" alt="group.title" /> -->
-      <!-- <li v-if="$parent.getUserID() == group.user_id"> -->
+      <div v-for="user in group.users" :key="user.id">
+        <h2>{{ user.username }}</h2>
+      </div>
+      <router-link v-bind:to="`/groups/${group.id}`">
+        <h2>{{ group.username }}</h2>
+      </router-link>
+
       <router-link v-bind:to="`/groups/${group.id}/edit`"><button>Edit group</button></router-link>
-      <!-- </li> -->
+
       <router-link to="/groups">Back to all groups.</router-link>
     </div>
   </div>

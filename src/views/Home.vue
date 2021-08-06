@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <h1>{{ message }}</h1>
+    <p>Signup or Login!</p>
   </div>
 </template>
 

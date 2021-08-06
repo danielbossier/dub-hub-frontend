@@ -2,7 +2,7 @@
   <div class="teams-index">
     <div v-for="team in teams" :key="team.id">
       <router-link v-bind:to="`/teams/${team.id}`">
-        <h2>Team: {{ team.name }}</h2>
+        <h2>{{ team.name }}</h2>
         <p>Wins: {{ team.wins }}</p>
         <p>Losses: {{ team.losses }}</p>
       </router-link>
