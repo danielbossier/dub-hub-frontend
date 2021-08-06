@@ -5,6 +5,8 @@
       |
       <router-link to="/teams">Teams</router-link>
       |
+      <router-link to="/display">MLB Standings</router-link>
+      |
       <router-link to="/groups">Groups</router-link>
       |
       <li v-if="!isLoggedIn()">

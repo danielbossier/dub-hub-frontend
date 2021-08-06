@@ -14,6 +14,10 @@
         <input type="email" v-model="newUserParams.email" />
       </div>
       <div>
+        <label>Group ID:</label>
+        <input type="group_id" v-model="newUserParams.group_id" />
+      </div>
+      <div>
         <label>Password:</label>
         <input type="password" v-model="newUserParams.password" />
       </div>
@@ -42,7 +46,7 @@ export default {
         .post("/users", this.newUserParams)
         .then((response) => {
           console.log(response.data);
-          this.$router.push("/login");
+          this.$router.push("/groups");
         })
         .catch((error) => {
           this.errors = error.response.data.errors;
