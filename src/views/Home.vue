@@ -1,7 +1,9 @@
 <template>
   <div class="home">
     <h1>{{ message }}</h1>
-    <p>Signup or Login!</p>
+    <div v-if="!isLoggedIn()">
+      <p>Signup or Login!</p>
+    </div>
   </div>
 </template>
 
@@ -15,6 +17,17 @@ export default {
     };
   },
   created: function () {},
-  methods: {},
+  methods: {
+    isLoggedIn: function () {
+      if (localStorage.getItem("jwt")) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    getUserId: function () {
+      return localStorage.getItem("user_id");
+    },
+  },
 };
 </script>
