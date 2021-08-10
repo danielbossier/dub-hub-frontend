@@ -6,11 +6,11 @@
         <div v-for="user in group.users" :key="user.id">
           <h2>{{ user.username }}</h2>
           <div v-for="team in user.teams" :key="team.id">
-            <h5>{{ team.city }}</h5>
-            <h5>{{ team.name }}</h5>
-            <h5>{{ team.wins }}</h5>
-            <h5>{{ team.losses }}</h5>
+            <h5>{{ team.city }} {{ team.name }}</h5>
+            <h5>{{ team.wins }} - {{ team.losses }}</h5>
           </div>
+          <!-- <p>Combined user record:</p>
+          <p>{{ totalWins(user) }} - {{ totalLosses(user) }}</p> -->
           <hr />
         </div>
       </router-link>
@@ -36,6 +36,16 @@ export default {
       this.group = response.data;
       console.log(response.data);
     });
+  },
+  methods: {
+    totalWins: function (user) {
+      let winsArray = user.teams.map((x) => x.wins).reduce((x, y) => x + y);
+      return winsArray;
+    },
+    totalLosses: function (user) {
+      let lossesArray = user.teams.map((x) => x.losses).reduce((x, y) => x + y);
+      return lossesArray;
+    },
   },
 };
 </script>
