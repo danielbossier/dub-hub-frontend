@@ -9,8 +9,8 @@
             <h5>{{ team.city }} {{ team.name }}</h5>
             <h5>{{ team.wins }} - {{ team.losses }}</h5>
           </div>
-          <!-- <p>Combined user record:</p>
-          <p>{{ totalWins(user) }} - {{ totalLosses(user) }}</p> -->
+          <p>Combined user record:</p>
+          <p>{{ totalWins(user) }} - {{ totalLosses(user) }}</p>
           <hr />
         </div>
       </router-link>
