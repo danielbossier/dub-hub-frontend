@@ -9,6 +9,8 @@
       |
       <router-link to="/groups">Groups</router-link>
       |
+      <router-link to="/groups/new">Create Group</router-link>
+      |
       <li v-if="!isLoggedIn()">
         <router-link to="/signup">Signup</router-link>
         |

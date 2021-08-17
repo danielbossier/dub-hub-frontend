@@ -14,10 +14,6 @@
         <input type="email" v-model="newUserParams.email" />
       </div>
       <div>
-        <label>Group ID:</label>
-        <input type="group_id" v-model="newUserParams.group_id" />
-      </div>
-      <div>
         <label>Password:</label>
         <input type="password" v-model="newUserParams.password" />
       </div>
