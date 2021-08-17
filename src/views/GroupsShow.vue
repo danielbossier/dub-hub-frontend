@@ -15,7 +15,7 @@
         </div>
       </router-link>
 
-      <router-link v-bind:to="`/groups/${group.id}/edit`"><button>Edit group</button></router-link>
+      <router-link v-bind:to="`/groups/${group.id}/edit`"><button>Join Group</button></router-link>
 
       <router-link to="/groups">Back to all groups.</router-link>
     </div>

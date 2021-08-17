@@ -1,30 +1,35 @@
 <template>
   <div class="groups-edit">
     <form v-on:submit.prevent="updateGroup()">
-      <h1>Edit Group</h1>
+      <h1>Join Group</h1>
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
       <div>
-        <label>Username:</label>
-        <input type="text" v-model="currentGroupParams.username" />
+        <label>Name:</label>
+        <input type="text" v-model="currentGroupParams.name" />
       </div>
       <input type="submit" value="Submit" />
-      <button v-on:click="destroyGroup()">Delete</button>
+      <!-- <button v-on:click="destroyGroup()">Delete</button> -->
     </form>
+    <router-link to="/groups">Back to all groups.</router-link>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+
 export default {
   data: function () {
     return {
       currentGroupParams: {},
       errors: [],
+      user: [],
+      current_user: localStorage.getItem("user_id"),
     };
   },
   created: function () {
+    this.getUser();
     axios.get(`/groups/${this.$route.params.id}`).then((response) => {
       console.log("Group info:", response.data);
       this.currentGroupParams = response.data;
@@ -32,17 +37,24 @@ export default {
   },
   methods: {
     updateGroup: function () {
-      axios.patch(`/groups/${this.$route.params.id}`, this.currentGroupParams).then((response) => {
+      axios.post("/group_users", this.currentGroupParams.id).then((response) => {
         console.log(response.data);
         this.$router.push(`/groups/${response.data.id}`);
       });
     },
-    destroyGroup: function () {
-      axios.delete(`/groups/${this.$route.params.id}`).then((response) => {
-        console.log("Group got got!", response.data);
-        this.$router.push("/groups");
+    getUser: function () {
+      axios.get("/users/" + this.current_user).then((response) => {
+        console.log("this should be current_user ID", this.current_user);
+        this.user = response.data;
+        console.log("should be the user_id", this.user);
       });
     },
+    // destroyGroup: function () {
+    //   axios.delete(`/groups/${this.$route.params.id}`).then((response) => {
+    //     console.log("Group got got!", response.data);
+    //     this.$router.push("/groups");
+    //   });
+    // },
   },
 };
 </script>

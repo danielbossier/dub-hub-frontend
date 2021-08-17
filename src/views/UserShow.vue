@@ -21,10 +21,11 @@ export default {
   data: function () {
     return {
       user: {},
+      currentUser: localStorage.getItem("user_id"),
     };
   },
   created: function () {
-    axios.get("/users/" + this.$route.params.id).then((response) => {
+    axios.get("/users/" + this.currentUser).then((response) => {
       this.user = response.data;
     });
   },
