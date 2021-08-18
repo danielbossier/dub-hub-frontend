@@ -9,11 +9,11 @@
             <h2 v-for="error in errors" v-bind:key="error">
               {{ error }}
             </h2>
-            <h5>{{ team.city }} {{ team.name }}</h5>
-            <h5>{{ team.wins }} - {{ team.losses }}</h5>
+            <h4>{{ team.city }} {{ team.name }}</h4>
+            <h4>{{ team.wins }} - {{ team.losses }}</h4>
           </div>
-          <p>Combined user record:</p>
-          <p>{{ totalWins(user) }} - {{ totalLosses(user) }}</p>
+          <h4>Combined user record:</h4>
+          <h4>{{ totalWins(user) }} - {{ totalLosses(user) }}</h4>
           <hr />
         </div>
       </router-link>

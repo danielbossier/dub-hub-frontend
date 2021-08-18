@@ -37,13 +37,6 @@ export default {
           this.status = error.response.status;
         });
     },
-    isLoggedIn: function () {
-      if (localStorage.getItem("jwt")) {
-        return true;
-      } else {
-        return false;
-      }
-    },
   },
 };
 </script>
