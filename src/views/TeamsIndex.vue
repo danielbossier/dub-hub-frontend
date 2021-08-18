@@ -3,11 +3,8 @@
     <div v-for="team in teams" :key="team.id">
       <router-link v-bind:to="`/teams/${team.id}`">
         <h2>{{ team.name }}</h2>
-        <p>Wins: {{ team.wins }}</p>
-        <p>Losses: {{ team.losses }}</p>
-        <div id="add-team-to-user">
-          <button v-if="isLoggedIn()" v-on:click="updateUser()">Add Team</button>
-        </div>
+        <p>Current Record:</p>
+        <p>{{ team.wins }} - {{ team.losses }}</p>
       </router-link>
     </div>
   </div>

@@ -45,7 +45,6 @@ export default {
         team_id: this.team.id,
         user_id: this.currentUser,
       };
-      console.log("this should be the team_id", this.team.id);
       axios
         .post("/team_users", params)
         .then((response) => {
