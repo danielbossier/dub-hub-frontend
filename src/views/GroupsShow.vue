@@ -16,6 +16,8 @@
           <h4>{{ totalWins(user) }} - {{ totalLosses(user) }}</h4>
           <hr />
         </div>
+        <!-- want to add a button that allows users to edit their teams -->
+        <!-- <button v-bind:to="`/users/${user.id}`">Edit Teams</button> -->
       </router-link>
 
       <router-link v-bind:to="`/groups/${group.id}/edit`"><button>Join Group</button></router-link>
