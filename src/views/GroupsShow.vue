@@ -6,6 +6,9 @@
         <div v-for="user in group.users" :key="user.id">
           <h2>{{ user.username }}</h2>
           <div v-for="team in user.teams" :key="team.id">
+            <h2 v-for="error in errors" v-bind:key="error">
+              {{ error }}
+            </h2>
             <h5>{{ team.city }} {{ team.name }}</h5>
             <h5>{{ team.wins }} - {{ team.losses }}</h5>
           </div>
@@ -29,21 +32,39 @@ export default {
   data: function () {
     return {
       group: {},
+      errors: [],
     };
   },
   created: function () {
-    axios.get("/groups/" + this.$route.params.id).then((response) => {
-      this.group = response.data;
-      console.log(response.data);
-    });
+    axios
+      .get("/groups/" + this.$route.params.id)
+      .then((response) => {
+        this.group = response.data;
+        console.log(response.data);
+      })
+      .catch((error) => {
+        this.status = error.response.status;
+      });
   },
   methods: {
     totalWins: function (user) {
-      let winsArray = user.teams.map((x) => x.wins).reduce((x, y) => x + y);
+      let winsArray = [];
+      winsArray = user.teams.map((x) => x.wins);
+      if (winsArray.length == 0) {
+        console.log("no teams assigned");
+      } else {
+        winsArray = winsArray.reduce((x, y) => x + y);
+      }
       return winsArray;
     },
     totalLosses: function (user) {
-      let lossesArray = user.teams.map((x) => x.losses).reduce((x, y) => x + y);
+      let lossesArray = [];
+      lossesArray = user.teams.map((x) => x.losses);
+      if (lossesArray.length == 0) {
+        console.log("no teams assigned");
+      } else {
+        lossesArray = lossesArray.reduce((x, y) => x + y);
+      }
       return lossesArray;
     },
   },

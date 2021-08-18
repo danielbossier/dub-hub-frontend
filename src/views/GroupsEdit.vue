@@ -6,8 +6,9 @@
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
       <div>
-        <label>Name:</label>
-        <input type="text" v-model="currentGroupParams.name" />
+        <label>Click sumbit to join:</label>
+        <h2>{{ currentGroupParams.name }}</h2>
+        <!-- <input type="text" v-model="currentGroupParams.name" /> -->
       </div>
       <input type="submit" value="Submit" />
       <!-- <button v-on:click="destroyGroup()">Delete</button> -->
@@ -37,16 +38,20 @@ export default {
   },
   methods: {
     updateGroup: function () {
-      axios.post("/group_users", this.currentGroupParams.id).then((response) => {
+      var params = {
+        group_id: this.currentGroupParams.id,
+        user_id: this.currentUser,
+      };
+      axios.post("/group_users", params).then((response) => {
         console.log(response.data);
         this.$router.push(`/groups/${response.data.id}`);
       });
     },
     getUser: function () {
       axios.get("/users/" + this.current_user).then((response) => {
-        console.log("this should be current_user ID", this.current_user);
+        console.log("current_user ID: ", this.current_user);
         this.user = response.data;
-        console.log("should be the user_id", this.user);
+        console.log(this.user);
       });
     },
     // destroyGroup: function () {
