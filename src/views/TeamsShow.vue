@@ -2,10 +2,12 @@
   <div class="teams-show">
     <div class="container">
       <h2>{{ team.name }}</h2>
-      <p>{{ team.wins }}</p>
-      <p>{{ team.losses }}</p>
+      <p>{{ team.wins }} - {{ team.losses }}</p>
       <!-- <img v-bind:src="team.image" alt="team.title" /> -->
       <!-- <li v-if="$parent.getUserID() == team.user_id"> -->
+      <div id="add-team-to-user">
+        <button v-if="isLoggedIn()" v-on:click="updateUser()">Add Team</button>
+      </div>
       <router-link v-bind:to="`/teams/${team.id}/edit`"><button>Edit team</button></router-link>
       <!-- </li> -->
       <router-link to="/teams">Back to all teams.</router-link>
@@ -19,8 +21,10 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      team: {},
+      currentTeamParams: {},
       errors: [],
+      team: {},
+      current_user: localStorage.getItem("user_id"),
     };
   },
   created: function () {
@@ -32,6 +36,30 @@ export default {
       .catch((error) => {
         this.status = error.response.status;
       });
+  },
+  methods: {
+    updateUser: function () {
+      var params = {
+        group_id: this.currentTeamParams.id,
+        user_id: this.currentUser,
+      };
+      axios
+        .post("/team_users", params)
+        .then((response) => {
+          console.log(response.data);
+          this.$router.push(`/groups/${response.data.id}`);
+        })
+        .catch((error) => {
+          this.status = error.response.status;
+        });
+    },
+    isLoggedIn: function () {
+      if (localStorage.getItem("jwt")) {
+        return true;
+      } else {
+        return false;
+      }
+    },
   },
 };
 </script>

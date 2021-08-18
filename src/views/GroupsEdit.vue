@@ -8,10 +8,8 @@
       <div>
         <label>Click sumbit to join:</label>
         <h2>{{ currentGroupParams.name }}</h2>
-        <!-- <input type="text" v-model="currentGroupParams.name" /> -->
       </div>
       <input type="submit" value="Submit" />
-      <!-- <button v-on:click="destroyGroup()">Delete</button> -->
     </form>
     <router-link to="/groups">Back to all groups.</router-link>
   </div>
@@ -31,10 +29,15 @@ export default {
   },
   created: function () {
     this.getUser();
-    axios.get(`/groups/${this.$route.params.id}`).then((response) => {
-      console.log("Group info:", response.data);
-      this.currentGroupParams = response.data;
-    });
+    axios
+      .get(`/groups/${this.$route.params.id}`)
+      .then((response) => {
+        console.log("Group info:", response.data);
+        this.currentGroupParams = response.data;
+      })
+      .catch((error) => {
+        this.status = error.response.status;
+      });
   },
   methods: {
     updateGroup: function () {

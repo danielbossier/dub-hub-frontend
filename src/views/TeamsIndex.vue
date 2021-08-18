@@ -5,6 +5,9 @@
         <h2>{{ team.name }}</h2>
         <p>Wins: {{ team.wins }}</p>
         <p>Losses: {{ team.losses }}</p>
+        <div id="add-team-to-user">
+          <button v-if="isLoggedIn()" v-on:click="updateUser()">Add Team</button>
+        </div>
       </router-link>
     </div>
   </div>
@@ -36,6 +39,13 @@ export default {
         .catch((error) => {
           this.status = error.response.status;
         });
+    },
+    isLoggedIn: function () {
+      if (localStorage.getItem("jwt")) {
+        return true;
+      } else {
+        return false;
+      }
     },
   },
 };
