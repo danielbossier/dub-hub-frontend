@@ -49,7 +49,7 @@ export default {
         .post("/group_users", params)
         .then((response) => {
           console.log(response.data);
-          this.$router.push(`/groups/${response.data.id}`);
+          this.$router.push(`/groups/${this.currentGroupParams.id}`);
         })
         .catch((error) => {
           this.status = error.response.status;
