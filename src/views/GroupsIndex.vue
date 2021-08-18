@@ -25,10 +25,15 @@ export default {
   },
   methods: {
     indexGroups: function () {
-      axios.get("/groups").then((response) => {
-        this.groups = response.data;
-        console.log("All groups:", this.groups);
-      });
+      axios
+        .get("/groups")
+        .then((response) => {
+          this.groups = response.data;
+          console.log("All groups:", this.groups);
+        })
+        .catch((error) => {
+          this.status = error.response.status;
+        });
     },
   },
 };

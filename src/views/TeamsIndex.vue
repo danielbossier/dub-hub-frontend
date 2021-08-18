@@ -27,10 +27,15 @@ export default {
   },
   methods: {
     indexTeams: function () {
-      axios.get("/teams").then((response) => {
-        this.teams = response.data;
-        console.log("All teams:", this.teams);
-      });
+      axios
+        .get("/teams")
+        .then((response) => {
+          this.teams = response.data;
+          console.log("All teams:", this.teams);
+        })
+        .catch((error) => {
+          this.status = error.response.status;
+        });
     },
   },
 };

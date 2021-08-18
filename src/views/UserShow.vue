@@ -25,9 +25,14 @@ export default {
     };
   },
   created: function () {
-    axios.get("/users/" + this.currentUser).then((response) => {
-      this.user = response.data;
-    });
+    axios
+      .get("/users/" + this.currentUser)
+      .then((response) => {
+        this.user = response.data;
+      })
+      .catch((error) => {
+        this.status = error.response.status;
+      });
   },
 };
 </script>

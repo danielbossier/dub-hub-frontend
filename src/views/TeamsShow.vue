@@ -20,12 +20,18 @@ export default {
   data: function () {
     return {
       team: {},
+      errors: [],
     };
   },
   created: function () {
-    axios.get("/teams/" + this.$route.params.id).then((response) => {
-      this.team = response.data;
-    });
+    axios
+      .get("/teams/" + this.$route.params.id)
+      .then((response) => {
+        this.team = response.data;
+      })
+      .catch((error) => {
+        this.status = error.response.status;
+      });
   },
 };
 </script>

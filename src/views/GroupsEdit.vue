@@ -42,17 +42,27 @@ export default {
         group_id: this.currentGroupParams.id,
         user_id: this.currentUser,
       };
-      axios.post("/group_users", params).then((response) => {
-        console.log(response.data);
-        this.$router.push(`/groups/${response.data.id}`);
-      });
+      axios
+        .post("/group_users", params)
+        .then((response) => {
+          console.log(response.data);
+          this.$router.push(`/groups/${response.data.id}`);
+        })
+        .catch((error) => {
+          this.status = error.response.status;
+        });
     },
     getUser: function () {
-      axios.get("/users/" + this.current_user).then((response) => {
-        console.log("current_user ID: ", this.current_user);
-        this.user = response.data;
-        console.log(this.user);
-      });
+      axios
+        .get("/users/" + this.current_user)
+        .then((response) => {
+          console.log("current_user ID: ", this.current_user);
+          this.user = response.data;
+          console.log(this.user);
+        })
+        .catch((error) => {
+          this.status = error.response.status;
+        });
     },
     // destroyGroup: function () {
     //   axios.delete(`/groups/${this.$route.params.id}`).then((response) => {
