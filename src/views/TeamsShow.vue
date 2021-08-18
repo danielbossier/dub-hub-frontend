@@ -24,10 +24,12 @@ export default {
       currentTeamParams: {},
       errors: [],
       team: {},
+      user: [],
       current_user: localStorage.getItem("user_id"),
     };
   },
   created: function () {
+    this.getUser();
     axios
       .get("/teams/" + this.$route.params.id)
       .then((response) => {
@@ -40,14 +42,27 @@ export default {
   methods: {
     updateUser: function () {
       var params = {
-        group_id: this.currentTeamParams.id,
+        team_id: this.team.id,
         user_id: this.currentUser,
       };
+      console.log("this should be the team_id", this.team.id);
       axios
         .post("/team_users", params)
         .then((response) => {
           console.log(response.data);
-          this.$router.push(`/groups/${response.data.id}`);
+          this.$router.push("/teams");
+        })
+        .catch((error) => {
+          this.status = error.response.status;
+        });
+    },
+    getUser: function () {
+      axios
+        .get("/users/" + this.current_user)
+        .then((response) => {
+          console.log("current_user ID: ", this.current_user);
+          this.user = response.data;
+          console.log(this.user);
         })
         .catch((error) => {
           this.status = error.response.status;

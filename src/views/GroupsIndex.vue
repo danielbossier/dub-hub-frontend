@@ -1,5 +1,6 @@
 <template>
   <div class="groups-index">
+    <h2>View your own group or join a new one!</h2>
     <div v-for="group in groups" :key="group.id">
       <router-link v-bind:to="`/groups/${group.id}`">
         <h2>{{ group.name }}</h2>
