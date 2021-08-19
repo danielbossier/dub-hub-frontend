@@ -6,6 +6,7 @@
         <h2 v-for="error in errors" v-bind:key="error">
           {{ error }}
         </h2>
+        {{ team_users }}
         <h4>{{ team.city }} {{ team.name }}</h4>
         <h4>{{ team.wins }} - {{ team.losses }}</h4>
         <div id="remove-team-from-user">
@@ -25,6 +26,7 @@ export default {
     return {
       user: {},
       errors: [],
+      team_users: {},
       currentUser: localStorage.getItem("user_id"),
     };
   },
@@ -42,14 +44,14 @@ export default {
   methods: {
     removeTeam: function () {
       var params = {
-        team_id: this.team.id,
-        user_id: this.currentUser,
+        team_user_id: this.team_users.id,
       };
       axios
-        .post("/team_users", params)
+        .delete(`/team_users/${18}`)
         .then((response) => {
+          console.log("should be team_user_id", params);
           console.log(response.data);
-          this.$router.push("/teams");
+          this.$router.push("/users/" + this.$route.params.id);
         })
         .catch((error) => {
           this.status = error.response.status;
