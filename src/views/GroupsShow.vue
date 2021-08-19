@@ -14,10 +14,13 @@
           </div>
           <h4>Combined user record:</h4>
           <h4>{{ totalWins(user) }} - {{ totalLosses(user) }}</h4>
+          <router-link v-bind:to="`/users/${user.id}`">
+            <button>Edit Teams</button>
+          </router-link>
           <hr />
         </div>
         <!-- want to add a button that allows users to edit their teams -->
-        <!-- <button v-bind:to="`/users/${user.id}`">Edit Teams</button> -->
+        <div></div>
       </router-link>
 
       <router-link v-bind:to="`/groups/${group.id}/edit`"><button>Join Group</button></router-link>
@@ -34,6 +37,7 @@ export default {
   data: function () {
     return {
       group: {},
+      user: {},
       errors: [],
     };
   },

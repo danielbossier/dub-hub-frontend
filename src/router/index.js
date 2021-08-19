@@ -11,6 +11,7 @@ import GroupsShow from "../views/GroupsShow.vue";
 import GroupsCreate from "../views/GroupsCreate.vue";
 import GroupsEdit from "../views/GroupsEdit.vue";
 import TeamsDisplay from "../views/TeamsDisplay.vue";
+import UsersShow from "../views/UsersShow.vue";
 
 Vue.use(VueRouter);
 
@@ -77,6 +78,11 @@ const routes = [
     path: "/display",
     name: "groups-display",
     component: TeamsDisplay,
+  },
+  {
+    path: "/users/:id",
+    name: "users-show",
+    component: UsersShow,
   },
 ];
 
