@@ -56,8 +56,8 @@
                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                 Create Group
               </a>
-              <!-- <div class="sb-sidenav-menu-heading">Interface</div> -->
-              <!-- <a
+              <div class="sb-sidenav-menu-heading">Interface</div>
+              <a
                 class="nav-link collapsed"
                 href="#"
                 data-bs-toggle="collapse"
@@ -68,8 +68,8 @@
                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                 Layouts
                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-              </a> -->
-              <!-- <div
+              </a>
+              <div
                 class="collapse"
                 id="collapseLayouts"
                 aria-labelledby="headingOne"
@@ -91,7 +91,7 @@
                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                 Pages
                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-              </a> -->
+              </a>
               <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                   <a
@@ -167,6 +167,7 @@
               <li class="breadcrumb-item active">Keeping Track of them Dubs</li>
             </ol>
           </div>
+          <router-view />
         </main>
       </div>
     </div>
@@ -193,7 +194,6 @@
         <router-link to="/logout">Logout</router-link>
       </li>
     </div> -->
-    <router-view />
     <footer class="py-4 bg-light mt-auto">
       <div class="container-fluid px-4">
         <div class="d-flex align-items-center justify-content-between small">
