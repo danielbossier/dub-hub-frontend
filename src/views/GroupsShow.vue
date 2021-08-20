@@ -57,6 +57,7 @@ export default {
       let winsArray = [];
       winsArray = user.teams.map((x) => x.wins);
       if (winsArray.length == 0) {
+        winsArray = "No teams";
         console.log("no teams assigned");
       } else {
         winsArray = winsArray.reduce((x, y) => x + y);
@@ -67,6 +68,7 @@ export default {
       let lossesArray = [];
       lossesArray = user.teams.map((x) => x.losses);
       if (lossesArray.length == 0) {
+        lossesArray = "assigned.";
         console.log("no teams assigned");
       } else {
         lossesArray = lossesArray.reduce((x, y) => x + y);

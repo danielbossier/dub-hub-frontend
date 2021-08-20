@@ -47,7 +47,7 @@ export default {
         .then((response) => {
           console.log("should be team_user_id", params);
           console.log(response.data);
-          this.$router.push("/users/" + this.$route.params.id);
+          this.$router.go();
         })
         .catch((error) => {
           this.status = error.response.status;
