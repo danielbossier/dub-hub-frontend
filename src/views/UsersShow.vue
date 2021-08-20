@@ -2,15 +2,14 @@
   <div class="user-show">
     <div class="container">
       <h1>{{ user.username }}</h1>
-      <div v-for="team in user.teams" :key="team.id">
+      <div v-for="team_user in user.team_users" :key="team_user.id">
         <h2 v-for="error in errors" v-bind:key="error">
           {{ error }}
         </h2>
-        {{ team_users }}
-        <h4>{{ team.city }} {{ team.name }}</h4>
-        <h4>{{ team.wins }} - {{ team.losses }}</h4>
+        <h4>{{ team_user.team.city }} {{ team_user.team.name }}</h4>
+        <h4>{{ team_user.team.wins }} - {{ team_user.team.losses }}</h4>
         <div id="remove-team-from-user">
-          <button v-if="isLoggedIn()" v-on:click="removeTeam()">Remove Team</button>
+          <button v-if="isLoggedIn()" v-on:click="removeTeam(team_user.id)">Remove Team</button>
         </div>
       </div>
       <router-link to="/groups">Back to all groups.</router-link>
@@ -42,12 +41,9 @@ export default {
       });
   },
   methods: {
-    removeTeam: function () {
-      var params = {
-        team_user_id: this.team_users.id,
-      };
+    removeTeam: function (params) {
       axios
-        .delete(`/team_users/${18}`)
+        .delete(`/team_users/${params}`)
         .then((response) => {
           console.log("should be team_user_id", params);
           console.log(response.data);
