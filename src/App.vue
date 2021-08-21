@@ -49,11 +49,11 @@
             <div class="nav">
               <div class="sb-sidenav-menu-heading">Groups</div>
               <a class="nav-link" href="/groups">
-                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                <div class="sb-nav-link-icon"><i class="fas fa-baseball-ball"></i></div>
                 All Groups
               </a>
               <a class="nav-link" href="/groups/new">
-                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                <div class="sb-nav-link-icon"><i class="fas fa-baseball-ball"></i></div>
                 Create Group
               </a>
               <!-- <div class="sb-sidenav-menu-heading">Interface</div>
@@ -144,11 +144,11 @@
               </div> -->
               <div class="sb-sidenav-menu-heading">Teams</div>
               <a class="nav-link" href="/teams">
-                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                <div class="sb-nav-link-icon"><i class="fas fa-baseball-ball"></i></div>
                 All Teams
               </a>
               <a class="nav-link" href="/display">
-                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                <div class="sb-nav-link-icon"><i class="fas fa-baseball-ball"></i></div>
                 Current Standings
               </a>
             </div>
