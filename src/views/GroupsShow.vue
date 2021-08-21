@@ -9,7 +9,7 @@
             <h2 v-for="error in errors" v-bind:key="error">
               {{ error }}
             </h2>
-            <h4>{{ team.city }} {{ team.name }}</h4>
+            <h4>{{ team.name }}</h4>
             <h4>{{ team.wins }} - {{ team.losses }}</h4>
           </div>
           <h4>Combined user record:</h4>

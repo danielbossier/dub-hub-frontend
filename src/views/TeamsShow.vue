@@ -1,7 +1,7 @@
 <template>
   <div class="teams-show">
     <div class="container">
-      <h2>{{ team.city }} {{ team.name }}</h2>
+      <h2>{{ team.name }}</h2>
       <p>{{ team.wins }} - {{ team.losses }}</p>
       <div id="add-team-to-user">
         <button v-if="isLoggedIn()" v-on:click="updateUser()">Add Team</button>

@@ -6,7 +6,7 @@
         <h2 v-for="error in errors" v-bind:key="error">
           {{ error }}
         </h2>
-        <h4>{{ team_user.team.city }} {{ team_user.team.name }}</h4>
+        <h4>{{ team_user.team.name }}</h4>
         <h4>{{ team_user.team.wins }} - {{ team_user.team.losses }}</h4>
         <div id="remove-team-from-user">
           <button v-if="isLoggedIn()" v-on:click="removeTeam(team_user.id)">Remove Team</button>
