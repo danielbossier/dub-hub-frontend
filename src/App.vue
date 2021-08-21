@@ -56,7 +56,7 @@
                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                 Create Group
               </a>
-              <div class="sb-sidenav-menu-heading">Interface</div>
+              <!-- <div class="sb-sidenav-menu-heading">Interface</div>
               <a
                 class="nav-link collapsed"
                 href="#"
@@ -141,7 +141,7 @@
                     </nav>
                   </div>
                 </nav>
-              </div>
+              </div> -->
               <div class="sb-sidenav-menu-heading">Teams</div>
               <a class="nav-link" href="/teams">
                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
@@ -210,6 +210,10 @@
 </template>
 
 <style>
+body {
+  background-image: url("./assets/background.jpg");
+  height: 1px;
+}
 /* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
