@@ -2,7 +2,7 @@
   <div id="app">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
       <!-- Navbar Brand-->
-      <a class="navbar-brand ps-3" href="index.html">The Dub Hub</a>
+      <a class="navbar-brand ps-3" href="/">The Dub Hub</a>
       <!-- Sidebar Toggle-->
       <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!">
         <i class="fas fa-bars"></i>
@@ -212,7 +212,7 @@
 <style>
 body {
   background-image: url("./assets/background.jpg");
-  height: 1px;
+  height: 10px;
 }
 /* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
