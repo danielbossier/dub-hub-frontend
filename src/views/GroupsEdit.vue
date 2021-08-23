@@ -6,10 +6,9 @@
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
       <div>
-        <label>Click sumbit to join:</label>
         <h2>{{ currentGroupParams.name }}</h2>
       </div>
-      <input type="submit" value="Submit" />
+      <input type="submit" value="Join Group" />
     </form>
     <router-link to="/groups">Back to all groups.</router-link>
   </div>

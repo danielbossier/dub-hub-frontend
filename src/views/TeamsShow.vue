@@ -1,16 +1,31 @@
 <template>
   <div class="teams-show">
     <div class="container">
-      <h2>{{ team.name }}</h2>
-      <p>{{ team.wins }} - {{ team.losses }}</p>
+      <div class="card" style="width: 15rem">
+        <!-- <h2>{{ team.name }}</h2>
+        <p>{{ team.wins }} - {{ team.losses }}</p> -->
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            {{ team.name }}
+            <br />
+            {{ team.wins }} - {{ team.losses }}
+          </li>
+        </ul>
+      </div>
       <div id="add-team-to-user">
         <button v-if="isLoggedIn()" v-on:click="updateUser()">Add Team</button>
       </div>
-      <!-- <router-link v-bind:to="`/teams/${team.id}/edit`"><button>Edit team</button></router-link> -->
       <router-link to="/teams">Back to all teams.</router-link>
     </div>
   </div>
 </template>
+
+<style>
+.card {
+  opacity: 0.8;
+  font-size: 1.75rem;
+}
+</style>
 
 <script>
 import axios from "axios";
