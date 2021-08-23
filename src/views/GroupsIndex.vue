@@ -1,15 +1,24 @@
 <template>
   <div class="groups-index">
     <h2>View your own group or join a new one!</h2>
-    <div v-for="group in groups" :key="group.id">
-      <router-link v-bind:to="`/groups/${group.id}`">
-        <h2>{{ group.name }}</h2>
-      </router-link>
+    <div class="card-deck">
+      <div class="card" style="width: 15rem">
+        <div v-for="group in groups" :key="group.id">
+          <router-link v-bind:to="`/groups/${group.id}`">
+            <h2>{{ group.name }}</h2>
+          </router-link>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
-<style></style>
+<style>
+.groups-index {
+  opacity: 1;
+  font-size: 1.75rem;
+}
+</style>
 
 <script>
 import axios from "axios";
