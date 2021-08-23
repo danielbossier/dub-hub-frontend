@@ -154,8 +154,11 @@
             </div>
           </div>
           <div class="sb-sidenav-footer">
-            <div class="small">Logged in as:</div>
-            Start Bootstrap
+            <div class="small">
+              You are logged in as:
+              <br />
+              {{ getUsername() }}
+            </div>
           </div>
         </nav>
       </div>
@@ -248,6 +251,9 @@ export default {
     },
     getUserId: function () {
       return localStorage.getItem("user_id");
+    },
+    getUsername: function () {
+      return localStorage.getItem("username");
     },
   },
 };
