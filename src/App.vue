@@ -198,16 +198,15 @@
       </li>
     </div> -->
     <footer class="py-4 bg-light mt-auto">
-      <div class="container-fluid px-4">
-        <div class="d-flex align-items-center justify-content-between small">
-          <div class="text-muted">Copyright &copy; Your Website 2021</div>
+      <!-- <div class="container-fluid px-4">
+        <div class="d-flex align-items-right justify-content-between small">
+          <div class="text-muted"></div>
           <div>
-            <a href="#">Privacy Policy</a>
+            <a>Copyright &copy; The Dub Hub 2021</a>
             &middot;
-            <a href="#">Terms &amp; Conditions</a>
           </div>
         </div>
-      </div>
+      </div> -->
     </footer>
   </div>
 </template>
@@ -215,7 +214,11 @@
 <style>
 body {
   background-image: url("./assets/background.jpg");
-  height: 10px;
+  background-size: 140%;
+  /* height: 100px; */
+  background-position: left;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 /* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
