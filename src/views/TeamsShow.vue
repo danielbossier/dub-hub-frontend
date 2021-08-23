@@ -46,6 +46,7 @@ export default {
       .get("/teams/" + this.$route.params.id)
       .then((response) => {
         this.team = response.data;
+        console.log("team ID", this.team);
       })
       .catch((error) => {
         this.status = error.response.status;
@@ -73,7 +74,7 @@ export default {
         .then((response) => {
           console.log("current_user ID: ", this.current_user);
           this.user = response.data;
-          console.log(this.user);
+          console.log("should be this user", this.user);
         })
         .catch((error) => {
           this.status = error.response.status;
