@@ -37,12 +37,12 @@
   opacity: 0.8;
   font-size: 1rem;
 }
-/* .column {
+.column {
   float: left;
   width: 50%;
   padding: 0 10px;
 }
-.teams-display {
+/* .teams-display {
   margin: 0 -5px;
 }
 .teams-display {

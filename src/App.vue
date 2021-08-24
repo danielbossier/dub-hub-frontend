@@ -143,13 +143,13 @@
                 </nav>
               </div> -->
               <div class="sb-sidenav-menu-heading">Teams</div>
-              <a class="nav-link" href="/teams">
+              <!-- <a class="nav-link" href="/teams">
                 <div class="sb-nav-link-icon"><i class="fas fa-baseball-ball"></i></div>
                 All Teams
-              </a>
+              </a> -->
               <a class="nav-link" href="/display">
                 <div class="sb-nav-link-icon"><i class="fas fa-baseball-ball"></i></div>
-                Current Standings
+                All Teams
               </a>
             </div>
           </div>
@@ -212,6 +212,7 @@
 
 <style>
 body {
+  /* color: rgb(250, 27, 27); */
   background-image: url("./assets/background.jpg");
   background-size: 140%;
   /* height: 100px; */
@@ -225,6 +226,9 @@ footer {
   bottom: 0px;
 
   /* height: 200px; */
+}
+.mt-4 {
+  color: red;
 }
 /* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

@@ -1,19 +1,28 @@
 <template>
   <div class="groups-create">
-    <img v-if="status" :src="`https://http.cat/${status}`" />
-    <form v-on:submit.prevent="createGroup()">
-      <h1>Create Group</h1>
-      <ul>
-        <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-      </ul>
-      <div>
-        <label>Name:</label>
-        <input type="text" v-model="newGroupParams.name" />
+    <div class="card-deck">
+      <div class="card" style="width: 18rem">
+        <form v-on:submit.prevent="createGroup()">
+          <h1>Create Group</h1>
+          <ul>
+            <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
+          </ul>
+          <div>
+            <label>Name:</label>
+            <input type="text" v-model="newGroupParams.name" />
+          </div>
+          <input type="submit" value="Submit" />
+        </form>
       </div>
-      <input type="submit" value="Submit" />
-    </form>
+    </div>
   </div>
 </template>
+
+<style>
+groups-create {
+  float: center;
+}
+</style>
 
 <script>
 import axios from "axios";
