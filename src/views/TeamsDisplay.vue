@@ -1,13 +1,17 @@
 <template>
   <div class="teams-display">
     <div class="column">
-      <div class="card" style="width: 19rem">
-        <h2>American League</h2>
-        <div v-for="team in teams" :key="team.id">
+      <div class="card" style="width: 22rem">
+        <!-- <h2>American League</h2> -->
+        <div v-for="team in sortFunc()" :key="team.id">
           <router-link v-bind:to="`/teams/${team.id}`">
-            <h2>{{ team.name }}</h2>
-            <p>Wins: {{ team.wins }}</p>
-            <p>Losses: {{ team.losses }}</p>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <h2>{{ team.name }}</h2>
+                <p>Wins: {{ team.wins }}</p>
+                <p>Losses: {{ team.losses }}</p>
+              </li>
+            </ul>
           </router-link>
         </div>
       </div>
@@ -25,26 +29,10 @@
       </div>
     </div> -->
   </div>
-  <!-- <div class="teams-display">
-    <div v-for="team in teams[0]" :key="team.id">
-      <router-link v-bind:to="`/teams/${team.id}`">
-        <h2>{{ team.name }}</h2>
-        <p>Wins: {{ team.wins }}</p>
-        <p>Losses: {{ team.losses }}</p>
-      </router-link>
-    </div>
-    <div v-for="team in teams[1]" :key="team.id">
-      <router-link v-bind:to="`/teams/${team.id}`">
-        <h2>{{ team.name }}</h2>
-        <p>Wins: {{ team.wins }}</p>
-        <p>Losses: {{ team.losses }}</p>
-      </router-link>
-    </div>
-  </div> -->
 </template>
 
 <style>
-.teams-index {
+.teams-display {
   columns: 100px 2;
   opacity: 0.8;
   font-size: 1rem;
@@ -64,7 +52,7 @@
 } */
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-  padding: 14px;
+  padding: 0px;
   text-align: left;
   background-color: #f1f1f1;
 }
@@ -112,6 +100,11 @@ export default {
       this.teams;
       ("second request began");
       return axios.get("/teams");
+    },
+    sortFunc: function () {
+      return this.teams.slice().sort(function (a, b) {
+        return a.wins < b.wins ? 1 : -1;
+      });
     },
   },
 };

@@ -15,7 +15,7 @@
       <div id="add-team-to-user">
         <button v-if="isLoggedIn()" v-on:click="updateUser()">Add Team</button>
       </div>
-      <router-link to="/teams">Back to all teams.</router-link>
+      <router-link to="/display">Back to all teams.</router-link>
     </div>
   </div>
 </template>
