@@ -1,26 +1,31 @@
 <template>
   <div class="groups-show">
     <div class="container">
-      <h1>{{ group.name }}</h1>
+      <!-- <h1>{{ group.name }}</h1> -->
       <div class="card-deck">
-        <div class="card" style="width: 15rem">
+        <div class="card" style="width: 17rem">
           <router-link v-bind:to="`/groups/${group.id}`">
             <div v-for="user in group.users" :key="user.id">
-              <h2>{{ user.username }}</h2>
-              <div v-for="team in user.teams" :key="team.id">
-                <h2 v-for="error in errors" v-bind:key="error">
-                  {{ error }}
-                </h2>
-                <h4>{{ team.name }}</h4>
-                <h4>{{ team.wins }} - {{ team.losses }}</h4>
-              </div>
-              <h4>User record:</h4>
-              <h4>{{ totalWins(user) }} - {{ totalLosses(user) }}</h4>
-              <router-link v-bind:to="`/users/${user.id}`">
-                <button>Edit Teams</button>
-              </router-link>
-              <hr />
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <h2>{{ user.username }}</h2>
+                  <div v-for="team in user.teams" :key="team.id">
+                    <h2 v-for="error in errors" v-bind:key="error">
+                      {{ error }}
+                    </h2>
+                    <h4>{{ team.name }}</h4>
+                    <h4>{{ team.wins }} - {{ team.losses }}</h4>
+                  </div>
+                  <h4>User record:</h4>
+                  <h4>{{ totalWins(user) }} - {{ totalLosses(user) }}</h4>
+                  <router-link v-bind:to="`/users/${user.id}`">
+                    <button class="basicButton">Edit Teams</button>
+                  </router-link>
+                  <hr />
+                </li>
+              </ul>
             </div>
+            <br />
           </router-link>
           <router-link v-bind:to="`/groups/${group.id}/edit`"><button>Join Group</button></router-link>
           <router-link to="/groups">Back to all groups.</router-link>
@@ -29,6 +34,29 @@
     </div>
   </div>
 </template>
+
+<style>
+.groups-show {
+  columns: 100px 2;
+  opacity: 0.9;
+  /* font-size: 1rem; */
+}
+.basicButton {
+  /* background-color: rgb(226, 19, 19); */
+  /* border: none; */
+  color: black;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+}
+.basicButton:hover {
+  background-color: red;
+  color: white;
+}
+</style>
 
 <script>
 import axios from "axios";

@@ -198,14 +198,14 @@
       </li>
     </div> -->
     <footer class="py-0 bg-light mt-4">
-      <div class="container-fluid px-2">
+      <!-- <div class="container-fluid px-2">
         <div class="d-flex align-items-right justify-content-between small">
           <div class="text-muted"></div>
           <div>
             <a>Copyright &copy; The Dub Hub 2021</a>
           </div>
         </div>
-      </div>
+      </div> -->
     </footer>
   </div>
 </template>
