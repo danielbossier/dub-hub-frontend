@@ -1,14 +1,14 @@
 <template>
   <div class="teams-index">
     <div class="card-deck">
-      <div class="card" style="width: 15rem">
+      <div class="card" style="width: 20rem">
         <div v-for="team in teams" :key="team.id">
           <router-link v-bind:to="`/teams/${team.id}`">
             <ul class="list-group list-group-flush">
               <li class="list-group-item">
-                {{ team.name }}
-                <br />
-                {{ team.wins }} - {{ team.losses }}
+                <h2>{{ team.name }}</h2>
+                <p>Wins: {{ team.wins }}</p>
+                <p>Losses: {{ team.losses }}</p>
               </li>
             </ul>
           </router-link>
@@ -26,8 +26,9 @@
 
 <style>
 .teams-index {
+  columns: 100px 2;
   opacity: 0.8;
-  font-size: 1.75rem;
+  font-size: 1rem;
 }
 </style>
 

@@ -197,16 +197,15 @@
         <router-link to="/logout">Logout</router-link>
       </li>
     </div> -->
-    <footer class="py-4 bg-light mt-auto">
-      <!-- <div class="container-fluid px-4">
+    <footer class="py-0 bg-light mt-4">
+      <div class="container-fluid px-2">
         <div class="d-flex align-items-right justify-content-between small">
           <div class="text-muted"></div>
           <div>
             <a>Copyright &copy; The Dub Hub 2021</a>
-            &middot;
           </div>
         </div>
-      </div> -->
+      </div>
     </footer>
   </div>
 </template>
@@ -219,6 +218,13 @@ body {
   background-position: left;
   background-attachment: fixed;
   background-repeat: no-repeat;
+}
+footer {
+  opacity: 0.6;
+  /* position: absolute; */
+  bottom: 0px;
+
+  /* height: 200px; */
 }
 /* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

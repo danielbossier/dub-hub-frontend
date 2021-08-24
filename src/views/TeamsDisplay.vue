@@ -3,7 +3,7 @@
     <div class="column">
       <div class="card" style="width: 19rem">
         <h2>American League</h2>
-        <div v-for="team in teams[0]" :key="team.id">
+        <div v-for="team in teams" :key="team.id">
           <router-link v-bind:to="`/teams/${team.id}`">
             <h2>{{ team.name }}</h2>
             <p>Wins: {{ team.wins }}</p>
@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
-    <div class="column">
+    <!-- <div class="column">
       <div class="card" style="width: 22rem">
         <h2>National League</h2>
         <div v-for="team in teams[1]" :key="team.id">
@@ -23,7 +23,7 @@
           </router-link>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
   <!-- <div class="teams-display">
     <div v-for="team in teams[0]" :key="team.id">
@@ -44,7 +44,12 @@
 </template>
 
 <style>
-.column {
+.teams-index {
+  columns: 100px 2;
+  opacity: 0.8;
+  font-size: 1rem;
+}
+/* .column {
   float: left;
   width: 50%;
   padding: 0 10px;
@@ -56,7 +61,7 @@
   content: "";
   display: table;
   clear: both;
-}
+} */
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
   padding: 14px;
@@ -80,6 +85,8 @@ export default {
     return {
       teams: [],
       currentTeam: {},
+      first_request: "",
+      second_request: "",
     };
   },
   created: function () {
@@ -87,15 +94,24 @@ export default {
   },
   methods: {
     indexTeams: function () {
-      axios
-        .get("/display")
-        .then((response) => {
-          this.teams = response.data;
-          console.log("All teams:", this.teams);
+      axios.all([this.request_1(), this.request_2()]).then(
+        axios.spread((first_response, second_response) => {
+          this.first_request = first_response.data;
+          console.log("First Request:", this.first_request);
+          this.teams = second_response.data;
+          console.log("Second Request:", this.teams);
         })
-        .catch((error) => {
-          this.status = error.response.status;
-        });
+      );
+    },
+    request_1() {
+      this.first_request;
+      ("first request began");
+      return axios.get("/display");
+    },
+    request_2() {
+      this.teams;
+      ("second request began");
+      return axios.get("/teams");
     },
   },
 };
