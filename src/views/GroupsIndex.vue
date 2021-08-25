@@ -3,11 +3,13 @@
     <div class="card-deck">
       <div class="card col text-center" style="width: 22rem">
         <h2 class="title text-center">Join A Group or Create Your Own</h2>
+        <hr />
         <div v-for="group in groups" :key="group.id">
           <router-link v-bind:to="`/groups/${group.id}`">
             <ul class="list-group list-group-flush">
               <li class="list-group-item">
                 <h2>{{ group.name }}</h2>
+                <!-- <hr /> -->
               </li>
             </ul>
           </router-link>

@@ -15,13 +15,14 @@
                     </h2>
                     <h4>{{ team.name }}</h4>
                     <h4>{{ team.wins }} - {{ team.losses }}</h4>
+                    <hr />
                   </div>
                   <h4>User record:</h4>
                   <h4>{{ totalWins(user) }} - {{ totalLosses(user) }}</h4>
                   <router-link v-bind:to="`/users/${user.id}`">
                     <button class="basicButton">Edit Teams</button>
                   </router-link>
-                  <br />
+                  <!-- <br /> -->
                   <hr />
                 </li>
               </ul>
