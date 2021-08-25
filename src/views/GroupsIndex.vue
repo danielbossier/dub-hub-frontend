@@ -21,6 +21,7 @@
 .groups-index {
   opacity: 1;
   font-size: 1.75rem;
+  padding: 20px;
 }
 </style>
 

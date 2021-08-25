@@ -234,6 +234,9 @@ footer {
 .mt-4 {
   color: red;
 }
+.breadcrumb-item {
+  color: rgb(23, 23, 181) !important;
+}
 #app {
   font-family: Varsity, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

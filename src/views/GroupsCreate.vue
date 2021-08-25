@@ -1,7 +1,7 @@
 <template>
   <div class="groups-create">
     <div class="card-deck">
-      <div class="card" style="width: 18rem">
+      <div class="card col text-center" style="width: 18rem">
         <form v-on:submit.prevent="createGroup()">
           <h1>Create Group</h1>
           <ul>
@@ -19,8 +19,8 @@
 </template>
 
 <style>
-groups-create {
-  float: center;
+.groups-create {
+  padding: 0 20px;
 }
 </style>
 

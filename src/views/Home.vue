@@ -7,7 +7,11 @@
   </div>
 </template>
 
-<style></style>
+<style>
+.home {
+  padding: 0 20px;
+}
+</style>
 
 <script>
 export default {

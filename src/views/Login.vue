@@ -21,6 +21,9 @@
 </template>
 
 <style>
+.login {
+  padding: 0 20px;
+}
 .h1 {
   color: red;
 }

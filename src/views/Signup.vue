@@ -1,6 +1,6 @@
 <template>
   <div class="signup">
-    <div class="card col text-center" style="width: 19rem">
+    <div class="card col text-center" style="width: 18rem">
       <form v-on:submit.prevent="submit()">
         <h1>Signup</h1>
         <ul>
@@ -29,6 +29,13 @@
 </template>
 
 <style>
+.signup {
+  padding: 0 20px;
+}
+input {
+  display: inline-block;
+  width: 100%;
+}
 .basicButton {
   /* background-color: rgb(226, 19, 19); */
   /* border: none; */
