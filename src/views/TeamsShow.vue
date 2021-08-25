@@ -1,7 +1,7 @@
 <template>
   <div class="teams-show">
     <div class="container">
-      <div class="card" style="width: 15rem">
+      <div class="card col text-center" style="width: 16rem">
         <!-- <h2>{{ team.name }}</h2>
         <p>{{ team.wins }} - {{ team.losses }}</p> -->
         <ul class="list-group list-group-flush">
@@ -11,11 +11,11 @@
             {{ team.wins }} - {{ team.losses }}
           </li>
         </ul>
+        <div id="add-team-to-user">
+          <button class="basicButton" v-if="isLoggedIn()" v-on:click="updateUser()">Add Team</button>
+        </div>
+        <router-link to="/display"><button class="basicButton">Back to all teams</button></router-link>
       </div>
-      <div id="add-team-to-user">
-        <button v-if="isLoggedIn()" v-on:click="updateUser()">Add Team</button>
-      </div>
-      <router-link to="/display">Back to all teams.</router-link>
     </div>
   </div>
 </template>

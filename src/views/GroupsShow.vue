@@ -3,7 +3,7 @@
     <div class="container">
       <!-- <h1>{{ group.name }}</h1> -->
       <div class="card-deck">
-        <div class="card col text-center" style="width: 17rem">
+        <div class="card col text-center" style="width: 18rem">
           <router-link v-bind:to="`/groups/${group.id}`">
             <div v-for="user in group.users" :key="user.id">
               <ul class="list-group list-group-flush">
@@ -21,6 +21,7 @@
                   <router-link v-bind:to="`/users/${user.id}`">
                     <button class="basicButton">Edit Teams</button>
                   </router-link>
+                  <br />
                   <hr />
                 </li>
               </ul>
