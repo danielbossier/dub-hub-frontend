@@ -1,7 +1,7 @@
 <template>
   <div class="groups-index">
     <div class="card-deck">
-      <div class="card" style="width: 20rem">
+      <div class="card col text-center" style="width: 22rem">
         <h2 class="title text-center">Join A Group or Create Your Own</h2>
         <div v-for="group in groups" :key="group.id">
           <router-link v-bind:to="`/groups/${group.id}`">

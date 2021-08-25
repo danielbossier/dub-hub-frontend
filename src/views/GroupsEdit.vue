@@ -1,16 +1,20 @@
 <template>
   <div class="groups-edit">
-    <form v-on:submit.prevent="updateGroup()">
-      <h1>Join Group</h1>
-      <ul>
-        <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-      </ul>
-      <div>
-        <h2>{{ currentGroupParams.name }}</h2>
+    <div class="card-deck">
+      <div class="card col text-center" style="width: 15rem">
+        <form v-on:submit.prevent="updateGroup()">
+          <h1>Join Group</h1>
+          <ul>
+            <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
+          </ul>
+          <div>
+            <h2>{{ currentGroupParams.name }}</h2>
+          </div>
+          <input type="submit" value="Join Group" />
+        </form>
+        <router-link to="/groups"><button class="basicButton">All groups</button></router-link>
       </div>
-      <input type="submit" value="Join Group" />
-    </form>
-    <router-link to="/groups">Back to all groups.</router-link>
+    </div>
   </div>
 </template>
 

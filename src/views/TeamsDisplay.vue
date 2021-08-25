@@ -1,15 +1,15 @@
 <template>
   <div class="teams-display">
     <div class="column">
-      <div class="card" style="width: 22rem">
+      <div class="card col text-center" style="width: 24rem">
         <!-- <h2>American League</h2> -->
         <div v-for="team in sortFunc()" :key="team.id">
           <router-link v-bind:to="`/teams/${team.id}`">
             <ul class="list-group list-group-flush">
               <li class="list-group-item">
                 <h2>{{ team.name }}</h2>
-                <p>Wins: {{ team.wins }}</p>
-                <p>Losses: {{ team.losses }}</p>
+                <p>{{ team.wins }} - {{ team.losses }}</p>
+                <hr />
               </li>
             </ul>
           </router-link>

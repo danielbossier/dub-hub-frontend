@@ -62,7 +62,7 @@ export default {
         .post("/team_users", params)
         .then((response) => {
           console.log(response.data);
-          this.$router.push("/teams");
+          this.$router.push("/display");
         })
         .catch((error) => {
           this.status = error.response.status;

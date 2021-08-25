@@ -23,7 +23,7 @@
                 </button>
               </div>
             </div>
-            <router-link to="/groups"><button class="basicButton">All groups.</button></router-link>
+            <router-link to="/groups"><button class="basicButton">All groups</button></router-link>
           </div>
         </div>
       </div>
