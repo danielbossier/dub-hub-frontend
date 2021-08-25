@@ -1,26 +1,30 @@
 <template>
   <div class="user-show">
     <div class="container">
-      <div class="card col text-center" style="width: 15rem">
-        <h1>{{ user.username }}</h1>
-      </div>
       <div class="card-deck">
         <div class="card col text-center" style="width: 15rem">
-          <div v-for="team_user in sortFunc()" :key="team_user.id">
-            <h2 v-for="error in errors" v-bind:key="error">
-              {{ error }}
-            </h2>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">
-                <h2>{{ team_user.team.name }}</h2>
-                <h4>{{ team_user.team.wins }} - {{ team_user.team.losses }}</h4>
-              </li>
-            </ul>
-            <div class="col text-center" id="remove-team-from-user">
-              <button class="basicButton" v-if="isLoggedIn()" v-on:click="removeTeam(team_user.id)">Remove Team</button>
+          <h1>{{ user.username }}</h1>
+        </div>
+        <div class="card-deck">
+          <div class="card col text-center" style="width: 15rem">
+            <div v-for="team_user in user.team_users" :key="team_user.id">
+              <h2 v-for="error in errors" v-bind:key="error">
+                {{ error }}
+              </h2>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <h2>{{ team_user.team.name }}</h2>
+                  <h4>{{ team_user.team.wins }} - {{ team_user.team.losses }}</h4>
+                </li>
+              </ul>
+              <div class="col text-center" id="remove-team-from-user">
+                <button class="basicButton" v-if="isLoggedIn()" v-on:click="removeTeam(team_user.id)">
+                  Remove Team
+                </button>
+              </div>
             </div>
+            <router-link to="/groups"><button class="basicButton">All groups.</button></router-link>
           </div>
-          <router-link to="/groups">Back to all groups.</router-link>
         </div>
       </div>
     </div>
@@ -82,11 +86,11 @@ export default {
         return false;
       }
     },
-    sortFunc: function () {
-      return this.team_users.slice().sort(function (a, b) {
-        return a.team.wins < b.team.wins ? 1 : -1;
-      });
-    },
+    // sortFunc: function () {
+    //   return this.team_users.slice().sort(function (a, b) {
+    //     return a.team.wins < b.team.wins ? 1 : -1;
+    //   });
+    // },
   },
 };
 </script>
