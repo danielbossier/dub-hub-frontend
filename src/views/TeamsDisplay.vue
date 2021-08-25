@@ -1,7 +1,7 @@
 <template>
   <div class="teams-display">
     <div class="column">
-      <div class="card col text-center" style="width: 24rem">
+      <div class="card col text-center" style="width: 25rem">
         <!-- <h2>American League</h2> -->
         <div v-for="team in sortFunc()" :key="team.id">
           <router-link v-bind:to="`/teams/${team.id}`">
