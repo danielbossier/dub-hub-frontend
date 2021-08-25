@@ -1,8 +1,8 @@
 <template>
   <div class="groups-index">
-    <!-- <h2>Vi</h2> -->
     <div class="card-deck">
       <div class="card" style="width: 20rem">
+        <h2 class="title text-center">Join A Group or Create Your Own</h2>
         <div v-for="group in groups" :key="group.id">
           <router-link v-bind:to="`/groups/${group.id}`">
             <ul class="list-group list-group-flush">
@@ -22,6 +22,9 @@
   opacity: 1;
   font-size: 1.75rem;
   padding: 20px;
+}
+.title {
+  color: red;
 }
 </style>
 
