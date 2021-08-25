@@ -34,7 +34,7 @@
 <style>
 .teams-display {
   columns: 100px 2;
-  opacity: 0.8;
+  opacity: 0.9;
   font-size: 1rem;
 }
 .column {
