@@ -1,7 +1,7 @@
 <template>
   <div class="groups-edit">
     <div class="card-deck">
-      <div class="card col text-center" style="width: 15rem">
+      <div class="card col text-center mx-auto" style="width: 15rem">
         <form v-on:submit.prevent="updateGroup()">
           <h1>Join Group</h1>
           <ul>
@@ -10,7 +10,7 @@
           <div>
             <h2>{{ currentGroupParams.name }}</h2>
           </div>
-          <input type="submit" value="Join Group" />
+          <input class="basicButton" type="submit" value="Join Group" />
         </form>
         <router-link to="/groups"><button class="basicButton">All groups</button></router-link>
       </div>
