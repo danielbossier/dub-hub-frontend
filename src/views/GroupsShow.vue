@@ -28,14 +28,14 @@
                 </li>
               </ul>
             </div>
+            <router-link v-bind:to="`/groups/${group.id}/edit`">
+              <button class="basicButton">Join Group</button>
+            </router-link>
+            <router-link v-bind:to="`/groups`"><button class="basicButton">All groups</button></router-link>
             <br />
           </router-link>
         </div>
       </div>
-      <router-link v-bind:to="`/groups/${group.id}/edit`">
-        <button class="basicButton">Join Group</button>
-      </router-link>
-      <router-link v-bind:to="`/groups`"><button class="basicButton">All groups</button></router-link>
     </div>
   </div>
 </template>
