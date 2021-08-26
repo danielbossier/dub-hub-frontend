@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <div class="card col text-center" style="width: 19rem">
+    <div class="card col text-center mx-auto" style="width: 19rem">
       <form v-on:submit.prevent="submit()">
         <h1>Login</h1>
         <ul>

@@ -1,7 +1,7 @@
 <template>
   <div class="teams-show">
     <div class="container">
-      <div class="card col text-center" style="width: 16rem">
+      <div class="card col text-center mx-auto" style="width: 16rem">
         <!-- <h2>{{ team.name }}</h2>
         <p>{{ team.wins }} - {{ team.losses }}</p> -->
         <ul class="list-group list-group-flush">
