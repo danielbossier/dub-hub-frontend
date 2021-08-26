@@ -9,6 +9,7 @@
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
                   <h2>{{ user.username }}</h2>
+                  <hr />
                   <div v-for="team in user.teams" :key="team.id">
                     <h2 v-for="error in errors" v-bind:key="error">
                       {{ error }}

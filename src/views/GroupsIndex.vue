@@ -1,7 +1,7 @@
 <template>
   <div class="groups-index">
     <div class="card-deck">
-      <div class="card col text-center" style="width: 22rem">
+      <div class="card col text-center mx-auto" style="width: 22rem">
         <h2 class="title text-center">Join A Group or Create Your Own</h2>
         <hr />
         <div v-for="group in groups" :key="group.id">
@@ -9,7 +9,7 @@
             <ul class="list-group list-group-flush">
               <li class="list-group-item">
                 <h2>{{ group.name }}</h2>
-                <!-- <hr /> -->
+                <hr />
               </li>
             </ul>
           </router-link>
@@ -21,6 +21,7 @@
 
 <style>
 .groups-index {
+  float: center;
   opacity: 1;
   font-size: 1.75rem;
   padding: 20px;

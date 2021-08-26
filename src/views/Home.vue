@@ -1,9 +1,9 @@
 <template>
   <div class="home">
     <!-- <h1>{{ message }}</h1> -->
-    <div class="card col text-center" style="width: 15rem" v-if="!isLoggedIn()">
+    <!-- <div class="card col text-center" style="width: 15rem" v-if="!isLoggedIn()">
       <p>Signup or Login!</p>
-    </div>
+    </div> -->
   </div>
 </template>
 

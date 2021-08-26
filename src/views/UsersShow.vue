@@ -2,11 +2,11 @@
   <div class="user-show">
     <div class="container">
       <div class="card-deck">
-        <div class="card col text-center" style="width: 15rem">
+        <div class="card col text-center mx-auto" style="width: 15rem">
           <h1>{{ user.username }}</h1>
         </div>
         <div class="card-deck">
-          <div class="card col text-center" style="width: 15rem">
+          <div class="card col text-center mx-auto" style="width: 15rem">
             <div v-for="team_user in user.team_users" :key="team_user.id">
               <h2 v-for="error in errors" v-bind:key="error">
                 {{ error }}

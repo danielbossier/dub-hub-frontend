@@ -40,7 +40,7 @@
 .column {
   float: left;
   width: 50%;
-  padding: 0 10px;
+  padding: 0 20px;
 }
 /* .teams-display {
   margin: 0 -5px;
