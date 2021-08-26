@@ -24,6 +24,9 @@
 .login {
   padding: 0 20px;
 }
+form {
+  text-align: center;
+}
 .h1 {
   color: red;
 }

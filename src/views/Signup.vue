@@ -35,6 +35,7 @@
 input {
   display: inline-block;
   width: 100%;
+  text-align: center;
 }
 .basicButton {
   /* background-color: rgb(226, 19, 19); */
